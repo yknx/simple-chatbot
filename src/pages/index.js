@@ -49,7 +49,7 @@ export default function Home() {
     // 메시지 전송 중임을 표시
     setLoading(true);
 
-    const docRef = await addDoc(todoCollectio, {
+    const docRef = await addDoc(message, {
       message: message,
     });
 
