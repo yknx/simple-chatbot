@@ -3,8 +3,6 @@ import { ChatInput } from "./ChatInput";
 import { ChatLoader } from "./ChatLoader";
 import { ChatBubble } from "./ChatBubble";
 
-import { db } from "@/firebase";
-
 
 export const Chat = ({ messages, loading, onSendMessage }) => {
   return (
