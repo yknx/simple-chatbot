@@ -7,6 +7,7 @@ import {
   collection,
   addDoc,
 } from "firebase/firestore"
+
 const chatbotdata = collection(db, "datas");
 
 export default function Home() {
