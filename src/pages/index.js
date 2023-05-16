@@ -2,6 +2,13 @@ import { Chat } from "@/components/Chat";
 import Head from "next/head";
 import { useEffect, useRef, useState } from "react";
 
+import { db } from "@/firebase";
+import {
+  collection,
+  addDoc,
+} from "firebase/firestore"
+
+
 export default function Home() {
   /*
     메시지 목록을 저장하는 상태로, 메시지의 형태는 다음과 같음
@@ -41,6 +48,11 @@ export default function Home() {
     setMessages(updatedMessages);
     // 메시지 전송 중임을 표시
     setLoading(true);
+
+    const docRef = await addDoc(todoCollectio, {
+      message: message,
+    });
+
 
     // /api/chat 에 메시지 목록을 전송하고 응답을 받음
     const response = await fetch("/api/chat", {
