@@ -4,6 +4,7 @@ import { ChatLoader } from "./ChatLoader";
 import { ChatBubble } from "./ChatBubble";
 
 
+
 export const Chat = ({ messages, loading, onSendMessage }) => {
   return (
     <>
