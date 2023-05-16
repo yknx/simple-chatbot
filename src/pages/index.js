@@ -7,7 +7,7 @@ import {
   collection,
   addDoc,
 } from "firebase/firestore"
-
+const chatbotdata = collection(db, "datas");
 
 export default function Home() {
   /*
@@ -49,8 +49,9 @@ export default function Home() {
     // 메시지 전송 중임을 표시
     setLoading(true);
 
-    const docRef = await addDoc(message, {
-      message: message,
+    const docRef = await addDoc(chatbotdata, {
+      role:"users",
+      content:message,
     });
 
 
